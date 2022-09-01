@@ -9,38 +9,40 @@
 <form th:action="@{/getProvince}">
 
 
-    compare <br>
+    compare
     <select name="one.province"><br>
         <option>Antwerp</option>
         <option>Brussels</option>
         <option>Limburg</option>
-        <option>Luxembourg</option>
         <option>East Flanders</option>
         <option>West Flanders</option>
         <option>Flemish Brabant</option>
+        <option>Luxembourg</option>
         <option>Hainaut</option>
         <option>Namur</option>
+        <option>Liège</option>
         <option>Walloon Brabant</option>
     </select>
-    <div></div>
 
-    with <br>
+
+    with
     <select name="two.province"><br>
         <option>Antwerp</option>
         <option>Brussels</option>
         <option>Limburg</option>
-        <option>Luxembourg</option>
         <option>East Flanders</option>
         <option>West Flanders</option>
         <option>Flemish Brabant</option>
+        <option>Luxembourg</option>
         <option>Hainaut</option>
         <option>Namur</option>
+        <option>Liège</option>
         <option>Walloon Brabant</option>
     </select>
-    <div></div>
 
 
-    <input type="submit" value="get Province">
+
+    <input type="submit" value="compare">
     <div></div>
 
     <br>
@@ -65,6 +67,8 @@
 
 </form>
 
+
+<h4><a th:href="@{/homePage}"> Click here to go to main page </a></h4>
 
 </body>
 </html>
