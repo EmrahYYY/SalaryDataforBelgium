@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Salary</title>
+</head>
+<body>
+
+<form th:action="@{/getProvince}">
+
+
+    compare <br>
+    <select name="one.province"><br>
+        <option>Antwerp</option>
+        <option>Brussels</option>
+        <option>Limburg</option>
+        <option>Luxembourg</option>
+        <option>East Flanders</option>
+        <option>West Flanders</option>
+        <option>Flemish Brabant</option>
+        <option>Hainaut</option>
+        <option>Namur</option>
+        <option>Walloon Brabant</option>
+    </select>
+    <div></div>
+
+    with <br>
+    <select name="two.province"><br>
+        <option>Antwerp</option>
+        <option>Brussels</option>
+        <option>Limburg</option>
+        <option>Luxembourg</option>
+        <option>East Flanders</option>
+        <option>West Flanders</option>
+        <option>Flemish Brabant</option>
+        <option>Hainaut</option>
+        <option>Namur</option>
+        <option>Walloon Brabant</option>
+    </select>
+    <div></div>
+
+
+    <input type="submit" value="get Province">
+    <div></div>
+
+    <br>
+    <div>
+        Average Monthly Net Salary (After Tax) in <cite th:text="${provinceName} "> </cite> is : <cite
+            th:text="${province} "></cite> €
+    </div>
+    <br>
+
+
+    <div>
+        Average Monthly Net Salary (After Tax) in <cite th:text="${provinceName1} "> </cite> is : <cite
+            th:text="${province1} "></cite> €
+    </div>
+    <br>
+
+    <div>
+        Average Monthly Net Salary (After Tax) in <cite th:text="${provinceName4} "> </cite> is <cite
+            th:text="${compareTwo} "> </cite> % higher then <cite th:text="${provinceName3} "></cite>
+    </div>
+    <br>
+
+</form>
+
+
+</body>
+</html>

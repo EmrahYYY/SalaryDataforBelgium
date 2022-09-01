@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Salary</title>
+</head>
+<body>
+
+<form th:action="@{/postSalary}">
+
+
+    <label>Add your email</label><br>
+    <input type="text" name="one.email" required
+           minlength="4" maxlength="40">
+    <div></div>
+    <label>Add your password</label><br>
+    <input type="text" name="one.password" required
+           minlength="8" maxlength="12">
+    <div></div>
+    <label>Add your name</label><br>
+    <input type="text" name="one.name" required
+           minlength="2" maxlength="20">
+    <div></div>
+    <label>Add your monthly salary (as 4 or 5 digits, as €):</label><br>
+    <input type="text" name="two.salaryOfUser" required
+           minlength="4" maxlength="5">
+
+
+    <div></div>
+    Sector <br>
+
+    <select name="two.sector"><br>
+        <option>Public Sector</option>
+        <option>Private Sector</option>
+
+    </select>
+    <div></div>
+
+
+    province <br>
+    <select name="two.province"><br>
+        <option>Antwerp</option>
+        <option>Brussels</option>
+        <option>Limburg</option>
+        <option>Luxembourg</option>
+        <option>East Flanders</option>
+        <option>West Flanders</option>
+        <option>Flemish Brabant</option>
+        <option>Hainaut</option>
+        <option>Namur</option>
+        <option>Walloon Brabant</option>
+    </select>
+    <div></div>
+
+    year <br>
+    <select name="two.year"><br>
+
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+    </select>
+    <div><br></div>
+
+    <input type="submit" value="Add Salary">
+
+
+</form>
+</body>
+</html>
