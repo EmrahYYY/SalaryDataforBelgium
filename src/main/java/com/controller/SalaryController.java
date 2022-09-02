@@ -9,12 +9,10 @@ import com.services.implementations.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -32,6 +30,27 @@ public class SalaryController {
     }
 
 
+
+    @GetMapping("/addSalary")
+    public String addSalary(Nest2 nest2) {
+
+
+        try {
+
+
+
+            userService.addUser(nest2.getOne());
+            nest2.getTwo().setUser(nest2.getOne());
+            salaryService.addSalary(nest2.getTwo());
+        } catch (Exception exception) {
+            System.out.println(exception);
+            System.out.println(exception.getStackTrace());
+
+        }
+
+        return "registerAndAddSalary";
+    }
+
     @GetMapping("/homePage")
     public String getAllDatas(Model model) {
 
@@ -42,22 +61,6 @@ public class SalaryController {
     }
 
 
-    @GetMapping("/postSalary")
-    public String addSalary(Nest2 nest2) {
-
-
-        try {
-
-
-            userService.addUser(nest2.getOne());
-            nest2.getTwo().setUser(nest2.getOne());
-            salaryService.addSalary(nest2.getTwo());
-        } catch (Exception exception) {
-            System.out.println(exception);
-        }
-
-        return "addSalary";
-    }
 
 
     @GetMapping("/getProvince")
