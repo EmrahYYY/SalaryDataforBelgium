@@ -22,7 +22,7 @@ public class Salary {
     @Column
     private int year;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne( fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private User user;
 
     public Salary() {
@@ -63,6 +63,7 @@ public class Salary {
     }
 
     public void setSalaryOfUser(int salaryOfUser) {
+
         this.salaryOfUser = salaryOfUser;
     }
 

@@ -16,8 +16,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
-    @Autowired
-    private DataSource dataSource;
+
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -52,7 +51,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .formLogin()
                 .usernameParameter("name")
               .defaultSuccessUrl("/homePage", true)
-
                 .permitAll()
                 .and()
                 .csrf().disable()

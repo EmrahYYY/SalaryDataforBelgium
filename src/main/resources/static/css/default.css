@@ -7,7 +7,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
     margin: 0;
     padding: 0;
-    background: #191919 url(static/images/images/img1.gif) repeat-x;
+    background: black url(../images/img1.gif) repeat-x;
     font: normal small "Trebuchet MS", Arial, Helvetica, sans-serif;
     color: #999999;
 }
@@ -15,7 +15,7 @@ body {
 a {
     border-bottom: 1px dotted #7D9412;
     text-decoration: none;
-    color: #F2900B;
+    color: yellow;
 }
 
 a:hover {
@@ -30,7 +30,7 @@ a:hover {
     width: 700px;
     height: 100px;
     margin: 0 auto;
-    background: url(static/images/images/img2.gif);
+    background: url(../images/img2.gif);
 }
 
 #header * {
@@ -40,7 +40,7 @@ a:hover {
     text-align: center;
     font-style: italic;
     font-weight: normal;
-    color: #FFFFFF;
+    color: red;
 }
 
 #header h1 {
@@ -71,7 +71,7 @@ a:hover {
 #colOne h2 {
     margin-top: 0;
     font-size: 2.2em;
-    color: #CCCCCC;
+    color: red;
 }
 
 #colOne p, #colOne ul, #colOne ol {
@@ -82,7 +82,7 @@ a:hover {
     margin-bottom: 50px;
     padding: 5px 0 8px 8px;
     background: #000000;
-    border-left: 2px solid #F2900B;
+    border-left: 2px solid yellow;
 }
 
 #colOne .credits p {
@@ -107,7 +107,7 @@ a:hover {
 
 #colTwo li {
     margin-bottom: 20px;
-    background: url(static/images/images/img3.gif) repeat-x;
+    background: url(../images/img3.gif) repeat-x;
 }
 
 #colTwo li li {
@@ -124,11 +124,11 @@ a:hover {
 #colTwo h2 {
     height: 25px;
     padding: 10px 0 0 10px;
-    background: url(static/images/images/img4.gif) no-repeat right top;
+    background: url(../images/img4.gif) no-repeat right top;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: .8em;
-    color: #F2900B;
+    color: yellow;
 }
 
 #form1 {

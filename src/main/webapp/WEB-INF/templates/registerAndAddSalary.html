@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form th:action="@{/postSalary}">
+<form th:action="@{/addSalary}" >
 
 
     <label>Add your email</label><br>
@@ -69,6 +69,7 @@
         <option>2012</option>
         <option>2011</option>
         <option>2010</option>
+        <option>0</option>
     </select>
     <div><br></div>
 
@@ -76,5 +77,9 @@
 
 
 </form>
+
+
+<h4><a th:href="@{/homePage}"> Click here to go to main page </a></h4>
+
 </body>
 </html>

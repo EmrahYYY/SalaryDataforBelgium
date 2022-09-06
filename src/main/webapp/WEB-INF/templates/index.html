@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Fotoladia</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <link href="../css/default.css" rel="stylesheet"/>
+
+
+
+</head>
+<body>
+<div id="header">
+  <h1>Salary Data</h1>
+  <h3><a href="#">for Belgium</a></h3>
+</div>
+
+<div >
+
+</div>
+<div id="content">
+  <div id="colOne">
+    <h2></h2>
+    <p><em><strong></strong></em> <strong></strong>
+      <a href="http://creativecommons.org/licenses/by/2.5/"></a>
+      Users can log in, add their salary, occupation, location and based on on these data, they can see the average salary in Belgium. The user can also compare the average salary in the regions (e.g. the average salary in East Flanders is 7% higher than in Limburg etc...)</p>
+    <h4><a th:href="@{/addSalary}"> Click here to go to register page and add salary </a></h4>
+<br/>
+<br/>
+    <div>
+      Average Monthly Net Salary (After Tax)	in Belgium is :   <td th:text="${average}"> euro
+    </div>
+    <br/>
+    <br/>
+
+    <form th:action="@{/getProvince}">
+
+
+      compare
+      <select name="one.province"><br>
+        <option>Antwerp</option>
+        <option>Brussels</option>
+        <option>Limburg</option>
+        <option>East Flanders</option>
+        <option>West Flanders</option>
+        <option>Flemish Brabant</option>
+        <option>Luxembourg</option>
+        <option>Hainaut</option>
+        <option>Namur</option>
+        <option>Liège</option>
+        <option>Walloon Brabant</option>
+      </select>
+
+
+      with
+      <select name="two.province"><br>
+        <option>Antwerp</option>
+        <option>Brussels</option>
+        <option>Limburg</option>
+        <option>East Flanders</option>
+        <option>West Flanders</option>
+        <option>Flemish Brabant</option>
+        <option>Luxembourg</option>
+        <option>Hainaut</option>
+        <option>Namur</option>
+        <option>Liège</option>
+        <option>Walloon Brabant</option>
+      </select>
+
+
+
+      <input type="submit" value="compare">
+      <div></div>
+
+      * Province comparison is only for members. You have to register and add at least one data
+
+    </form>
+
+    <br/>
+
+
+    <h3>Latest Data </h3>
+    <table class="table table-dark">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Province</th>
+        <th scope="col">Sector</th>
+        <th scope="col">Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="salary:${salary}">
+        <td th:text="${salary.id}">
+        <td th:text="${salary.user.name}">
+        <td th:text="${salary.salaryOfUser}">
+        <td th:text="${salary.province}">
+        <td th:text="${salary.sector}">
+        <td th:text="${salary.user.stringDate}">
+
+        </td>
+      </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <div class="credits">
+      <p class="file"><small></small></p>
+    </div>
+  </div>
+  <div id="colTwo">
+    <ul>
+      <li>
+
+      </li>
+      <li>
+        <h2>   <cite></cite>Pages</h2>
+        <ul>
+          <li class="active"><a href="#">Brussels</a></li>
+          <li><a href="#">Antwerp</a></li>
+          <li><a href="#">Limburg</a></li>
+          <li><a href="#">East Flanders</a></li>
+          <li><a href="#">West Flanders</a></li>
+          <li><a href="#">Flemish Brabant</a></li>
+          <li><a href="#">Luxembourg</a></li>
+          <li><a href="#">Hainaut</a></li>
+          <li><a href="#">Namur</a></li>
+          <li><a href="#">Liège</a></li>
+          <li><a href="#">Walloon Brabant</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="footer">
+  <p>September 14th, 2022  by  <a href="http://www.freecsstemplates.org/"><strong>Emrah Yavuz</strong></a></p>
+</div>
+</body>
+</html>

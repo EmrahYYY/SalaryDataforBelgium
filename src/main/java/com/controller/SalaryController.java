@@ -3,13 +3,11 @@ package com.controller;
 
 import com.services.implementations.Nest;
 import com.services.implementations.Nest2;
-import com.data.Salary;
 import com.services.implementations.SalaryServiceImpl;
 import com.services.implementations.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,27 +27,6 @@ public class SalaryController {
         this.userService = userService;
     }
 
-
-
-    @GetMapping("/addSalary")
-    public String addSalary(Nest2 nest2) {
-
-
-        try {
-
-
-
-            userService.addUser(nest2.getOne());
-            nest2.getTwo().setUser(nest2.getOne());
-            salaryService.addSalary(nest2.getTwo());
-        } catch (Exception exception) {
-            System.out.println(exception);
-            System.out.println(exception.getStackTrace());
-
-        }
-
-        return "registerAndAddSalary";
-    }
 
     @GetMapping("/homePage")
     public String getAllDatas(Model model) {
