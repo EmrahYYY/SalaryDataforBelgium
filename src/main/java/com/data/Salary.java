@@ -65,6 +65,7 @@ public class Salary {
     public void setSalaryOfUser(int salaryOfUser) {
 
         this.salaryOfUser = salaryOfUser;
+
     }
 
     public String getSector() {

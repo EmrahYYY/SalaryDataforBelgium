@@ -30,7 +30,7 @@ public class SalaryServiceImpl implements SalaryService {
     @Override
     public List<Salary> salaries() {
 
-        List<Salary> salaries= salaryRepository.findAll();
+        List<Salary> salaries = salaryRepository.findAll();
 
         Collections.reverse(salaries);
 
@@ -59,9 +59,11 @@ public class SalaryServiceImpl implements SalaryService {
 
     public double compereProvinces(String province1, String province2) throws Exception {
 
-        if (averageSalaryInSingleProvince(province1)>averageSalaryInSingleProvince(province2))
-        {return  Math.round(averageSalaryInSingleProvince(province1) / averageSalaryInSingleProvince(province2) * 100) -100 ;}
-        else {return Math.round( averageSalaryInSingleProvince(province2)/averageSalaryInSingleProvince(province1) * 100) -100;  }
+        if (averageSalaryInSingleProvince(province1) > averageSalaryInSingleProvince(province2)) {
+            return Math.round(averageSalaryInSingleProvince(province1) / averageSalaryInSingleProvince(province2) * 100) - 100;
+        } else {
+            return Math.round(averageSalaryInSingleProvince(province2) / averageSalaryInSingleProvince(province1) * 100) - 100;
+        }
     }
 
     public double averageSalaryInSingleProvince(String province) throws Exception {
@@ -81,13 +83,72 @@ public class SalaryServiceImpl implements SalaryService {
 
         System.out.println("average Salary in " + province + " is : " + Math.round(total / count));
 
-        if (Math.round(total / count)<0.0){
+        if (Math.round(total / count) < 0.0) {
             System.out.println();
-            throw  new Exception("Doesn't find any data");
+            throw new Exception("Doesn't find any data");
 
-        } else { return Math.round(total / count);}
+        } else {
+            return Math.round(total / count);
+        }
 
 
+    }
+
+
+    public int adjustSalaryForInflation(int salaryOfUser, int year) {
+
+        System.out.println(salaryOfUser);
+
+        switch (year) {
+            case 2000:
+                salaryOfUser *= 1.0254;
+            case 2001:
+                salaryOfUser *= 1.0247;
+            case 2002:
+                salaryOfUser *= 1.0165;
+            case 2003:
+                salaryOfUser *= 1.0159;
+            case 2004:
+                salaryOfUser *= 1.0210;
+            case 2005:
+                salaryOfUser *= 1.0278;
+            case 2006:
+                salaryOfUser *= 1.0179;
+            case 2007:
+                salaryOfUser *= 1.0182;
+            case 2008:
+                salaryOfUser *= 1.0449;
+            case 2009:
+                salaryOfUser *= 0.9995;
+            case 2010:
+                salaryOfUser *= 1.0219;
+            case 2011:
+                salaryOfUser *= 1.0353;
+            case 2012:
+                salaryOfUser *= 1.0284;
+            case 2013:
+                salaryOfUser *= 1.0111;
+            case 2014:
+                salaryOfUser *= 1.0034;
+            case 2015:
+                salaryOfUser *= 1.0056;
+            case 2016:
+                salaryOfUser *= 1.0197;
+            case 2017:
+                salaryOfUser *= 1.0213;
+            case 2018:
+                salaryOfUser *= 1.0205;
+            case 2019:
+                salaryOfUser *= 1.0144;
+            case 2020:
+                salaryOfUser *= 1.0074;
+            case 2021:
+                salaryOfUser *= 1.0244;
+
+
+        }
+
+        return salaryOfUser;
 
     }
 

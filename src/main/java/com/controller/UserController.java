@@ -7,11 +7,15 @@ import com.services.implementations.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
+@RequestMapping(method = RequestMethod.GET)
 public class UserController {
 
 
@@ -26,8 +30,17 @@ public class UserController {
     }
 
 
-    @GetMapping("/addSalary")
-    public String addSalary(Nest2 nest2) {
+    @GetMapping("/register")
+    public String showRegisterPage(Model model) {
+
+        model.addAttribute("nest2", new Nest2());
+
+        return "registerAndAddSalary";
+    }
+
+
+    @PostMapping("/addSalary")
+    public String addSalary(Nest2 nest2, Model model) {
 
 
         try {
@@ -38,11 +51,23 @@ public class UserController {
 
             userService.addUser(nest2.getOne());
             nest2.getTwo().setUser(nest2.getOne());
+
+            nest2.getTwo().setSalaryOfUser(salaryService.adjustSalaryForInflation((int) nest2.getTwo().getSalaryOfUser(), nest2.getTwo().getYear()));
+
             salaryService.addSalary(nest2.getTwo());
+
+
         } catch (Exception exception) {
             System.out.println(exception);
         }
-        return "registerAndAddSalary";
+
+        model.addAttribute("current",  nest2.getTwo().getSalaryOfUser() );
+
+        return "salaryAddingSucces";
     }
+
+
+
+
 
 }
