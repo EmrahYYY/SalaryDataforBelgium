@@ -4,6 +4,7 @@ package com.controller;
 import com.services.implementations.Nest2;
 import com.services.implementations.SalaryServiceImpl;
 import com.services.implementations.UserServiceImpl;
+import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -43,6 +44,9 @@ public class UserController {
     public String addSalary(Nest2 nest2, Model model) {
 
 
+        model.addAttribute("AddedValue",  nest2.getTwo().getSalaryOfUser() );
+        model.addAttribute("year",  nest2.getTwo().getYear() );
+
         try {
 
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -58,7 +62,8 @@ public class UserController {
 
 
         } catch (Exception exception) {
-            System.out.println(exception);
+
+            return "exception";
         }
 
         model.addAttribute("current",  nest2.getTwo().getSalaryOfUser() );

@@ -8,15 +8,25 @@
 <body>
 
 
+<div class="container text-center">
+    <h3>You have successfully registered and added salary!</h3>
 
-<div>
-  your  current salary is :   <td th:text="${current}"> euro
+    <div>
+
+        Your salary of <cite th:text="${AddedValue} "> </cite> € in <cite
+            th:text="${year} "> </cite> is calculated as <cite th:text="${current} "></cite> € for the current year due to inflation effects.
+        In  <cite th:text="${2022-year} "></cite> years, the difference in your salary due to inflation is  <cite th:text="${current-AddedValue} "></cite> €.
+    </div>
+
+
+
+
+    <h4><a th:href="@{/homePage}"> Click here to login </a></h4>
+
 </div>
 
 
-<h3>You have signed up successfully</h3>
 
-<h4><a th:href="@{/homePage}"> Click here to login </a></h4>
 
 </body>
 </html>

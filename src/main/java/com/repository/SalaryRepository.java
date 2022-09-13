@@ -9,5 +9,8 @@ import java.util.List;
 public interface SalaryRepository extends JpaRepository<Salary, Integer> {
 
     @Query("SELECT u FROM Salary u WHERE u.province = ?1")
-    public List<Salary> findSalaryByProvinceName(String userName);
+    public List<Salary> findSalarysByProvinceName(String province);
+
+    @Query("SELECT u FROM Salary u WHERE u.sector = ?1")
+    public List<Salary> findSalarysBySectorName(String sector);
 }

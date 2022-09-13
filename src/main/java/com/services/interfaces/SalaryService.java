@@ -10,4 +10,6 @@ public interface SalaryService {
 
     public List<Salary> salaries();
 
+
+
 }

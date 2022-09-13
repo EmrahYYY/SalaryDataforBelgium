@@ -3,80 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Salary</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+        .registerbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+
+        /* Add a blue text color to links */
+        a {
+            color: dodgerblue;
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+<form th:action="@{/addSalary}" method="post">
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
 
-<form th:action="@{/addSalary}" method="post" >
-
-
-    <label>Add your email</label><br>
-    <input type="text" name="one.email" required
-           minlength="4" maxlength="40">
-    <div></div>
-    <label>Add your password</label><br>
-    <input type="text" name="one.password" required
-           minlength="8" maxlength="12">
-    <div></div>
-    <label>Add your name</label><br>
-    <input type="text" name="one.name" required
-           minlength="2" maxlength="20">
-    <div></div>
-    <label>Add your monthly salary (as 4 or 5 digits, as €):</label><br>
-    <input type="text" name="two.salaryOfUser" required
-           minlength="4" maxlength="5">
-
-
-    <div></div>
-    Sector <br>
-
-    <select name="two.sector"><br>
-        <option>Public Sector</option>
-        <option>Private Sector</option>
-
-    </select>
-    <div></div>
+        <label>Add your email</label>
+        <input type="text"  placeholder="Enter Email" name="one.email" required
+               minlength="4" maxlength="40">
+        <div></div>
+        <label>Add your password</label>
+        <input type="text"  placeholder="Enter Password" name="one.password" required
+               minlength="8" maxlength="12">
+        <div></div>
+        <label>Add your name</label>
+        <input type="text" placeholder="Enter Name" name="one.name" required
+               minlength="2" maxlength="20">
+        <div></div>
+        <label>Add Your Monthly Net Salary (After Tax) (as 4 or 5 digits, as €):</label><br>
+        <input type="text" placeholder="Enter Salary" name="two.salaryOfUser" required
+               minlength="4" maxlength="5">
 
 
-    province <br>
-    <select name="two.province"><br>
-        <option>Antwerp</option>
-        <option>Brussels</option>
-        <option>Limburg</option>
-        <option>East Flanders</option>
-        <option>West Flanders</option>
-        <option>Flemish Brabant</option>
-        <option>Luxembourg</option>
-        <option>Hainaut</option>
-        <option>Namur</option>
-        <option>Liège</option>
-        <option>Walloon Brabant</option>
-    </select>
-    <div></div>
+        <div></div>
+        Sector <br>
 
-    year <br>
-    <select name="two.year"><br>
+        <select name="two.sector"><br>
+            <option>Public Sector</option>
+            <option>Private Sector</option>
 
-        <option>2022</option>
-        <option>2021</option>
-        <option>2020</option>
-        <option>2019</option>
-        <option>2018</option>
-        <option>2017</option>
-        <option>2016</option>
-        <option>2015</option>
-        <option>2014</option>
-        <option>2013</option>
-        <option>2012</option>
-        <option>2011</option>
-        <option>2010</option>
-        <option>0</option>
-    </select>
-    <div><br></div>
-
-    <input type="submit" value="Add Salary">
+        </select>
+        <div></div>
 
 
+        province <br>
+        <select name="two.province"><br>
+            <option>Antwerp</option>
+            <option>Brussels</option>
+            <option>Limburg</option>
+            <option>East Flanders</option>
+            <option>West Flanders</option>
+            <option>Flemish Brabant</option>
+            <option>Luxembourg</option>
+            <option>Hainaut</option>
+            <option>Namur</option>
+            <option>Liège</option>
+            <option>Walloon Brabant</option>
+        </select>
+        <div></div>
+
+        year <br>
+        <select name="two.year"><br>
+
+            <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+            <option>2018</option>
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+            <option>2014</option>
+            <option>2013</option>
+            <option>2012</option>
+            <option>2011</option>
+            <option>2010</option>
+            <option>0</option>
+        </select>
+        <div><br></div>
+
+
+
+        <button type="submit" class="registerbtn">Register and Add Salary</button>
+
+    </div>
+
+    <div class="container signin">
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+
+    </div>
 </form>
+
 
 </body>
 </html>

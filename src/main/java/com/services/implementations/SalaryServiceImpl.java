@@ -5,7 +5,9 @@ import com.repository.SalaryRepository;
 import com.services.interfaces.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.expression.Lists;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,10 +34,16 @@ public class SalaryServiceImpl implements SalaryService {
 
         List<Salary> salaries = salaryRepository.findAll();
 
+
+
         Collections.reverse(salaries);
 
-        return salaries;
+
+
+        return salaries.subList(0, 15);
     }
+
+
 
 
     public double averageSalaries() {
@@ -67,7 +75,7 @@ public class SalaryServiceImpl implements SalaryService {
     }
 
     public double averageSalaryInSingleProvince(String province) throws Exception {
-        List<Salary> salariess = salaryRepository.findSalaryByProvinceName(province);
+        List<Salary> salariess = salaryRepository.findSalarysByProvinceName(province);
         int count = 0;
         double total = 0;
 
@@ -81,10 +89,7 @@ public class SalaryServiceImpl implements SalaryService {
 
         }
 
-        System.out.println("average Salary in " + province + " is : " + Math.round(total / count));
-
         if (Math.round(total / count) < 0.0) {
-            System.out.println();
             throw new Exception("Doesn't find any data");
 
         } else {
@@ -95,9 +100,39 @@ public class SalaryServiceImpl implements SalaryService {
     }
 
 
+    public double averageSalaryInSingleSector(String sector) throws Exception {
+        List<Salary> salariess = salaryRepository.findSalarysBySectorName(sector);
+        int count = 0;
+        double total = 0;
+
+
+        for (Salary salary : salariess) {
+
+            if (salary.getSalaryOfUser() > 0) {
+                total += salary.getSalaryOfUser();
+                count++;
+            }
+
+        }
+
+
+        if (Math.round(total / count) < 0.0) {
+            throw new Exception("Doesn't find any data");
+
+        } else {
+            return Math.round(total / count);
+        }
+
+
+    }
+
+
+
     public int adjustSalaryForInflation(int salaryOfUser, int year) {
 
-        System.out.println(salaryOfUser);
+        /*  source for inflation of Belgium:
+         https://www.macrotrends.net/countries/BEL/belgium/inflation-rate-cpi#   */
+
 
         switch (year) {
             case 2000:

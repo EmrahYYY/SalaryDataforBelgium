@@ -2,7 +2,6 @@ package com.controller;
 
 
 import com.services.implementations.Nest;
-import com.services.implementations.Nest2;
 import com.services.implementations.SalaryServiceImpl;
 import com.services.implementations.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,7 +72,23 @@ public class SalaryController {
 
     }
 
+    @GetMapping("singleProvince/{name}")
+    public String showSingleProvince(@PathVariable String name, Model model) throws Exception {
+
+        model.addAttribute("averageForSingleProvince", salaryService.averageSalaryInSingleProvince(name));
+        model.addAttribute("nameOfProvince", name);
+
+        return "singleProvince";
+    }
 
 
+    @GetMapping("singleSector/{sector}")
+    public String showSingelSector(@PathVariable String sector, Model model) throws Exception {
+
+        model.addAttribute("averageForSingleSector", salaryService.averageSalaryInSingleSector(sector));
+        model.addAttribute("nameOfSector", sector);
+
+        return "singleSector";
+    }
 
 }
