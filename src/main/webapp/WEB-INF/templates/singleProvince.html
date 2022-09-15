@@ -1,15 +1,108 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <title>Fotoladia</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <link href="../css/default.css" rel="stylesheet"/>
+
+
+
 </head>
 <body>
-
-<div>
-    Average Monthly Net Salary (After Tax) in <cite th:text="${nameOfProvince} "> </cite> is : <cite
-        th:text="${averageForSingleProvince} "></cite> €
+<div id="header">
+    <h1>salary data</h1>
+    <h3><a href="#">for Province</a></h3>
 </div>
+
+
+
+<div >
+
+</div>
+<div id="content">
+    <div id="colOne">
+
+
+        &nbsp;&nbsp;  <a class="nav-link active" aria-current="page" href="/login">Log In</a>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{/register}">  Register  and Add Salary </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{/homePage}">  Home Page</a>
+
+        <br/>
+        <br/><br/>
+        <h2></h2>
+
+
+        <br/>
+        <h4><a >           Average Monthly Net Salary (After Tax) in <cite th:text="${nameOfProvince} "> </cite> is : <cite
+                th:text="${averageForSingleProvince} "></cite> €</a></h4>
+
+        <br/>
+        <br/>
+
+        <br/>
+
+
+
+        <br> <br>
+
+
+
+
+
+    </div>
+
+
+
+    <br> <br>
+
+    <div id="colTwo">
+
+
+        <ul>
+
+            <li>
+                <h2>   <cite></cite>&nbsp;&nbsp;&nbsp; Categories</h2>
+
+                <ul>
+                    <h2>   <cite></cite>Provinces</h2>
+                    <li><a th:href="@{/singleProvince/Brussels}"> Brussels </a></li>
+                    <li><a th:href="@{/singleProvince/Antwerp}"> Antwerp </a></li>
+                    <li><a th:href="@{/singleProvince/Limburg}"> Limburg </a></li>
+                    <li><a th:href="@{/singleProvince/East Flanders}"> East Flanders </a></li>
+                    <li><a th:href="@{/singleProvince/West Flanders}"> West Flanders </a></li>
+                    <li><a th:href="@{/singleProvince/Flemish Brabant}"> Flemish Brabant </a></li>
+                    <li><a th:href="@{/singleProvince/Hainaut}"> Walloon Brabant </a></li>
+                    <li><a th:href="@{/singleProvince/Luxembourg}"> Luxembourg </a></li>
+                    <li><a th:href="@{/singleProvince/Hainaut}"> Hainaut </a></li>
+                    <li><a th:href="@{/singleProvince/Namur}"> Namur </a></li>
+                    <li><a th:href="@{/singleProvince/Liège}"> Liège </a></li>
+
+                    <h2>   <cite></cite>Sectors</h2>
+
+                    <li><a th:href="@{/singleSector/Public Sector}"> Public Sector </a></li>
+                    <li><a th:href="@{/singleSector/Private Sector}"> Private Sector </a></li>
+
+
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<br/><br/>
+<br/><br/><br/><br/>
+
+<div id="footer"><br/><br/><br/><br/>
+    <p>September 14th, 2022  by  <a href="https://emrahyyy.github.io/emrah_yavuz_cv/index.html"><strong>Emrah Yavuz</strong></a></p>
+    <br/><br/>
+</div>
+
+<br/><br/>
 
 </body>
 </html>

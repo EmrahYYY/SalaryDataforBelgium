@@ -4,11 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Salary</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: ivory;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+
+        .signin {
+            background-color: #f1f1f1;
+            text-align: left;
+        }
+
+    </style>
 </head>
 <body>
 
 
-<div class="container text-center">
+<form >
     <h3>You have successfully registered and added salary!</h3>
 
     <div>
@@ -19,13 +43,19 @@
     </div>
 
 
+    <br>
 
 
-    <h4><a th:href="@{/homePage}"> Click here to login </a></h4>
+    <div class="signin1">
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
 
-</div>
+    </div>
+    <div class="signin">
+        <p> Go To Home Page! <a href="/homePage">Home Page</a>.</p>
 
+    </div>
 
+</form>
 
 
 </body>

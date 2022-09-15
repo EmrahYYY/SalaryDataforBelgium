@@ -23,11 +23,11 @@
         /* Full-width input fields */
         input[type=text], input[type=password] {
             width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
+            padding: 6px;
+            margin: 5px 0 15px 0;
             display: inline-block;
             border: none;
-            background: #f1f1f1;
+            background: lightgrey;
         }
 
         input[type=text]:focus, input[type=password]:focus {
@@ -43,7 +43,7 @@
 
         /* Set a style for the submit button */
         .registerbtn {
-            background-color: #04AA6D;
+            background-color: black;
             color: white;
             padding: 16px 20px;
             margin: 8px 0;
@@ -73,27 +73,24 @@
 <form th:action="@{/addSalary}" method="post">
     <div class="container">
         <h1>Register</h1>
-        <p>Please fill in this form to create an account.</p>
-        <hr>
-
+        <p>Please fill in this form to create an account and add your salary.</p>
+        <br>
         <label>Add your email</label>
         <input type="text"  placeholder="Enter Email" name="one.email" required
                minlength="4" maxlength="40">
-        <div></div>
+
         <label>Add your password</label>
         <input type="text"  placeholder="Enter Password" name="one.password" required
                minlength="8" maxlength="12">
-        <div></div>
+
         <label>Add your name</label>
         <input type="text" placeholder="Enter Name" name="one.name" required
                minlength="2" maxlength="20">
-        <div></div>
-        <label>Add Your Monthly Net Salary (After Tax) (as 4 or 5 digits, as €):</label><br>
-        <input type="text" placeholder="Enter Salary" name="two.salaryOfUser" required
+
+        <label>Your Monthly Net Salary </label><br>
+        <input type="text" placeholder="Enter Salary, as 4 or 5 digits, as €" name="two.salaryOfUser" required
                minlength="4" maxlength="5">
 
-
-        <div></div>
         Sector <br>
 
         <select name="two.sector"><br>
@@ -102,9 +99,9 @@
 
         </select>
         <div></div>
+        <br>
 
-
-        province <br>
+        Province <br>
         <select name="two.province"><br>
             <option>Antwerp</option>
             <option>Brussels</option>
@@ -119,8 +116,8 @@
             <option>Walloon Brabant</option>
         </select>
         <div></div>
-
-        year <br>
+        <br>
+        Year (Your salary will be adjusted to current year for inflation) <br>
         <select name="two.year"><br>
 
             <option>2022</option>
@@ -136,7 +133,17 @@
             <option>2012</option>
             <option>2011</option>
             <option>2010</option>
-            <option>0</option>
+            <option>2009</option>
+            <option>2008</option>
+            <option>2007</option>
+            <option>2006</option>
+            <option>2005</option>
+            <option>2004</option>
+            <option>2003</option>
+            <option>2002</option>
+            <option>2001</option>
+            <option>2000</option>
+
         </select>
         <div><br></div>
 

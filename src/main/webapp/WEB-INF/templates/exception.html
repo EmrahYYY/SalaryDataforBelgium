@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title></title>
+    <meta charset="UTF-8">
+    <title>Add Salary</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: ivory;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+
+        .signin {
+            background-color: #f1f1f1;
+            text-align: left;
+        }
+
+    </style>
 </head>
 <body>
 
-<div>
 
-    You probably registered with this e-mail address before, please try again with another e-mail address.
+<form >
+    <h3> your registration failed</h3>
+
+    <div>
+
+        You probably registered with this e-mail address before, please try again with another e-mail address.
+
+    </div>
 
 
-</div>
+    <br>
+
+    <div >
+        <p> Try Again! <a href="/register">Register  and Add Salary</a>.</p>
+
+    </div>
+    <div >
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+
+    </div>
+    <div >
+        <p> Go To Home Page! <a href="/homePage">Home Page</a>.</p>
+
+    </div>
+
+</form>
+
 
 </body>
 </html>

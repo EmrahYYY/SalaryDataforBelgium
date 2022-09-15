@@ -120,7 +120,7 @@ public class SalaryServiceImpl implements SalaryService {
             throw new Exception("Doesn't find any data");
 
         } else {
-            return Math.round(total / count);
+            return Math.round((total / count));
         }
 
 

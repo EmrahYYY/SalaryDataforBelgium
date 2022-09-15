@@ -17,23 +17,33 @@
   <h3><a href="#">for Belgium</a></h3>
 </div>
 
+
+
 <div >
 
 </div>
 <div id="content">
   <div id="colOne">
+
+ &nbsp;&nbsp;  <a class="nav-link active" aria-current="page" href="/login">Log In</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{/register}">  Register  and Add Salary </a>
+
+    <br/>
+    <br/><br/>
     <h2></h2>
     <p><em><strong></strong></em> <strong></strong>
       <a href="http://creativecommons.org/licenses/by/2.5/"></a>
-      Users can log in, add their salary, occupation, location and based on on these data, they can see the average salary in Belgium. The user can also compare the average salary in the regions (e.g. the average salary in East Flanders is 7% higher than in Limburg etc...)</p>
-    <h4><a th:href="@{/register}"> Click here to go to register page and add salary </a></h4>
+      You can log in, add your salary, occupation, location. Your salary will be adjusted to current year for inflation.
+      Based on other users and your data, you can see the average salary in Belgium,
+      provinces and sectors. You can also compare the average salary in the regions
+      (e.g. the average salary in East Flanders is 7% higher than in Limburg etc...)</p>
+
+    <br/>
+    <h3><a >        Average Monthly Net Salary (After Tax)	in Belgium is :  <cite th:text="${average} "></cite> €</a></h3>
 
 <br/>
 <br/>
-    <div>
-      Average Monthly Net Salary (After Tax)	in Belgium is :   <td th:text="${average}"> euro
-    </div>
-    <br/>
+
     <br/>
 
     <form th:action="@{/getProvince}">
@@ -70,9 +80,9 @@
         <option>Walloon Brabant</option>
       </select>
 
+      &nbsp;&nbsp;
 
-
-      <input type="submit" value="compare">
+      <input type="submit" value="compare" >
       <div></div>
 
       * Province comparison is only for members. You have to register and add at least one data
@@ -80,7 +90,7 @@
     </form>
 
     <br/>
-
+    <br/><br/>
 
     <h3>Most Recently 15  Data   </h3>
     <table class="table table-dark">
@@ -102,7 +112,6 @@
         <td th:text="${salary.province}">
         <td th:text="${salary.sector}">
         <td th:text="${salary.user.stringDate}">
-
         </td>
       </tr>
 
@@ -111,14 +120,21 @@
     </table>
 
 
-    <div class="credits">
-      <p class="file"><small></small></p>
-    </div>
+
   </div>
+
+
+
+  <br> <br>
+
   <div id="colTwo">
+
+
     <ul>
+
       <li>
-        <h2>   <cite></cite>Categories</h2>
+        <h2>   <cite></cite>&nbsp;&nbsp;&nbsp; Categories</h2>
+
         <ul>
           <h2>   <cite></cite>Provinces</h2>
           <li><a th:href="@{/singleProvince/Brussels}"> Brussels </a></li>
@@ -146,14 +162,15 @@
     </ul>
   </div>
 </div>
+<br/><br/>
+<br/><br/><br/><br/>
 
-
-
-<div id="footer">
-  <p>September 14th, 2022  by  <a href="http://www.freecsstemplates.org/"><strong>Emrah Yavuz</strong></a></p>
+<div id="footer"><br/><br/><br/><br/>
+  <p>September 14th, 2022  by  <a href="https://emrahyyy.github.io/emrah_yavuz_cv/index.html"><strong>Emrah Yavuz</strong></a></p>
+  <br/><br/>
 </div>
 
-
+<br/><br/>
 
 </body>
 </html>
