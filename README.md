@@ -1,1 +1,2 @@
  You can log in, add your salary, occupation, location. Your salary will be adjusted to current year for inflation.  Based on other users and your data, you can see the average salary in Belgium, provinces and sectors. You can also compare the average salary in the regions (e.g. the average salary in East Flanders is 7% higher than in Limburg etc...)
+![2022-09-26](https://user-images.githubusercontent.com/92089004/192257476-dafe4c88-0013-4022-aa74-05283f679fe9.png)
