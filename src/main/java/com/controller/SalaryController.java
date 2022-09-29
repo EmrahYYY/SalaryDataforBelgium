@@ -37,8 +37,6 @@ public class SalaryController {
     }
 
 
-
-
     @GetMapping("/getProvince")
     public String compere(Nest nest, Model model) throws Exception {
 

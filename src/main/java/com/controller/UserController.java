@@ -34,7 +34,7 @@ public class UserController {
     @GetMapping("/register")
     public String showRegisterPage(Model model) {
 
-        model.addAttribute("nest2", new Nest2());
+      model.addAttribute("nest2", new Nest2());
 
         return "registerAndAddSalary";
     }
