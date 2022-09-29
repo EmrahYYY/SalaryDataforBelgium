@@ -7,7 +7,8 @@
  ![localhost_7575_getProvince_one province=West+Flanders two province=Limburg](https://user-images.githubusercontent.com/92089004/192262310-699d46bc-8f78-40de-9401-0fa1f3c5c743.png)
  
 &
-![localhost_7575_register](https://user-images.githubusercontent.com/92089004/193153281-a2ad11c8-f442-4aee-8f1c-7e82e4d247dd.png)
+![localhost_7575_register (1)](https://user-images.githubusercontent.com/92089004/193153711-592f0662-522c-44f9-b484-e5f86a994706.png)
+
 
  &
  ![localhost_7575_addSalary](https://user-images.githubusercontent.com/92089004/192262196-1b4e2d88-c7d7-42ec-b656-051aae6f0856.png)
