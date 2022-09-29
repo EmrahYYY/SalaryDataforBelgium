@@ -9,9 +9,5 @@
  &
  ![localhost_7575_addSalary](https://user-images.githubusercontent.com/92089004/192262196-1b4e2d88-c7d7-42ec-b656-051aae6f0856.png)
  
- &
- ![localhost_7575_addSalary](https://user-images.githubusercontent.com/92089004/192262239-4d848b85-641d-4861-b247-07c9588175ac.png)
-
-
 &
 ![2022-09-26](https://user-images.githubusercontent.com/92089004/192257476-dafe4c88-0013-4022-aa74-05283f679fe9.png)
