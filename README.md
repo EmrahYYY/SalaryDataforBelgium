@@ -1,9 +1,9 @@
  
  Description of the project;
  
- 1- You can log in, add your salary, occupation, location.
+ 1- You can log in, add your salary, occupation and location.
  
- 2- Your salary will be adjusted to current year for inflation.( e.g. your salary which was 1800 Euros in 2018  is 1935 Euros in 2022,  depending on the change in inflation in 4 years.)
+ 2- Your salary will be adjusted to current year for inflation.( e.g. your salary which was 1800 Euros in 2018  is 1935 Euros in 2022,  depending on the change in inflation in 4 years etc...)
  
  3- Based on other users and your data, you can see the average salary in Belgium, provinces and sectors.
  
