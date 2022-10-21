@@ -1,4 +1,13 @@
- You can log in, add your salary, occupation, location. Your salary will be adjusted to current year for inflation.  Based on other users and your data, you can see the average salary in Belgium, provinces and sectors. You can also compare the average salary in the regions (e.g. the average salary in East Flanders is 7% higher than in Limburg etc...)
+ 
+ Description of the project;
+ 
+ 1- You can log in, add your salary, occupation, location.
+ 
+ 2- Your salary will be adjusted to current year for inflation.( e.g. your salary which was 1800 Euros in 2018  is 1935 Euros in 2022,  depending on the change in inflation in 4 years.)
+ 
+ 3- Based on other users and your data, you can see the average salary in Belgium, provinces and sectors.
+ 
+ 4- You can also compare the average salary in the regions (e.g. the average salary in East Flanders is 7% higher than in Limburg etc...)
  
  &
 ![localhost_7575_homePage (3)](https://user-images.githubusercontent.com/92089004/197199455-f8c4b308-08b9-479b-b5c3-271e4a82b6d9.png)
