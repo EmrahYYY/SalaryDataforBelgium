@@ -10,6 +10,8 @@ import org.thymeleaf.expression.Lists;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.Stream;
 
 @Service
 public class SalaryServiceImpl implements SalaryService {
@@ -35,15 +37,11 @@ public class SalaryServiceImpl implements SalaryService {
         List<Salary> salaries = salaryRepository.findAll();
 
 
-
         Collections.reverse(salaries);
-
 
 
         return salaries.subList(0, 15);
     }
-
-
 
 
     public double averageSalaries() {
@@ -101,31 +99,21 @@ public class SalaryServiceImpl implements SalaryService {
 
 
     public double averageSalaryInSingleSector(String sector) throws Exception {
-        List<Salary> salariess = salaryRepository.findSalarysBySectorName(sector);
-        int count = 0;
-        double total = 0;
+
+        OptionalDouble average = salaryRepository.findSalarysBySectorName(sector).stream()
+                .map(Salary::getSalaryOfUser)
+                .filter(x -> x > 0).mapToDouble(x -> x).average();
 
 
-        for (Salary salary : salariess) {
-
-            if (salary.getSalaryOfUser() > 0) {
-                total += salary.getSalaryOfUser();
-                count++;
-            }
-
-        }
-
-
-        if (Math.round(total / count) < 0.0) {
+        if (Math.round(average.getAsDouble()) < 0.0) {
             throw new Exception("Doesn't find any data");
 
         } else {
-            return Math.round((total / count));
+            return Math.round(average.getAsDouble());
         }
 
 
     }
-
 
 
     public int adjustSalaryForInflation(int salaryOfUser, int year) {

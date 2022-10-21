@@ -93,7 +93,7 @@ public class GrossSalaryImpl {
         }
 
 
-        return net;
+        return Math.round((net));
     }
 
 

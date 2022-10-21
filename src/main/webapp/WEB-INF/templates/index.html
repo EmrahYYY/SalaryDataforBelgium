@@ -8,13 +8,13 @@
 
   <link href="../css/default.css" rel="stylesheet"/>
 
-
-
 </head>
 <body>
 <div id="header">
-  <h1>Salary Data</h1>
-  <h3><a href="#">for Belgium</a></h3>
+  <h1>    <p class="lead" th:text="#{label.head}"></p>
+  </h1>
+  <h3><a href="#">    <p class="lead" th:text="#{label.head2}"></p>
+  </a></h3>
 </div>
 
 
@@ -25,23 +25,24 @@
 <div id="content">
   <div id="colOne">
 
- &nbsp;&nbsp;  <a class="nav-link active" aria-current="page" href="/login">Log In</a>
+ &nbsp;&nbsp;   <a class="nav-link" href="/?lang=en" th:text="#{label.lang.en}"></a>
+    <a class="nav-link" href="/?lang=nl" th:text="#{label.lang.nl}"></a>   &nbsp;&nbsp;&nbsp;&nbsp;  <a class="nav-link active" aria-current="page" href="/login">Log In</a>
     &nbsp;&nbsp;&nbsp;&nbsp;<a th:href="@{/register}">  Register  and Add Salary </a>  &nbsp;&nbsp;&nbsp;
-    &nbsp;          <a th:href="@{/grossToNet}">  Convert your Gross Salary To Net Salary </a>
+    &nbsp;
+
+
     <br/>
+
     <br/><br/>
     <h2></h2>
-    <p><em><strong></strong></em> <strong></strong>
-      <a href="http://creativecommons.org/licenses/by/2.5/"></a>
-      You can log in, add your salary, occupation, location. Your salary will be adjusted to current year for inflation.
-      Based on other users and your data, you can see the average salary in Belgium,
-      provinces and sectors. You can also compare the average salary in the regions
-      (e.g. the average salary in East Flanders is 7% higher than in Limburg etc...)</p>
+    <p class="lead" th:text="#{label.content}"></p>
 
     <br/>
-    <h3><a >        Average Monthly Net Salary (After Tax)	in Belgium is :  <cite th:text="${average} "></cite> €</a></h3>
+    <h3><a >        Average Monthly Net Salary (After Tax)	in Belgium is :  <cite href="/?lang=en" th:text="${average} "></cite> €</a></h3>
 
-<br/>
+<br/><br/>
+    <a th:href="@{/grossToNet}">  Convert your Gross Salary To Net Salary </a>
+    <br/>
 <br/>
 
     <br/>
@@ -105,7 +106,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr th:each="salary:${salary}">
+      <tr  th:each="salary:${salary}">
         <td th:text="${salary.id}">
         <td th:text="${salary.user.name}">
         <td th:text="${salary.salaryOfUser}">

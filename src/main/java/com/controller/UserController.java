@@ -4,7 +4,6 @@ package com.controller;
 import com.services.implementations.Nest2;
 import com.services.implementations.SalaryServiceImpl;
 import com.services.implementations.UserServiceImpl;
-import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
